@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class COW {
     private int cowID;
     private String cowName;
@@ -18,6 +19,8 @@ public class COW {
         this.milkYield=milkYield;
         this.breedingID=breedingID;
     }
+    
+
     public int getCowID() { return cowID; }
     public void setCowID(int cowID) { this.cowID = cowID; }
 
@@ -27,6 +30,12 @@ public class COW {
     public int getCowAge() { return cowAge; }
     public void setCowAge(int cowAge) { this.cowAge = cowAge; }
 
+    public String getCowBreed() { return cowBreed; }
+    public void setCowBreed(String cowBreed) { this.cowBreed = cowBreed; }
+
+    public double getCowWeight() { return cowWeight; }
+    public void setCowWeight(double cowWeight) { this.cowWeight = cowWeight; }
+
     public String getHealthStatus() { return healthStatus; }
     public void setHealthStatus(String healthStatus) { this.healthStatus = healthStatus; }
 
@@ -35,29 +44,44 @@ public class COW {
 
     public int getBreedingID() { return breedingID; }
     public void setBreedingID(int breedingID) { this.breedingID = breedingID; }
-
-    public String getCowBreed() { return cowBreed; }
-    public void setCowBreed(String cowBreed) { this.cowBreed = cowBreed; }
-
-    public double getCowWeight() { return cowWeight; }
-    public void setCowWeight(double cowWeight) { this.cowWeight = cowWeight; }
-
    
     public boolean isHealthy() {
         return "Healthy".equalsIgnoreCase(healthStatus);
     }
+    private static ArrayList<COW>
+    COWList = new ArrayList<>();
 
-
-    public void displayInfo() {
-        System.out.println("Cow ID: " + cowID);
-        System.out.println("Name: " + cowName);
-        System.out.println("Age: " + cowAge + " years");
-        System.out.println("Breed: " + cowBreed);
-        System.out.println("Weight: " + cowWeight + " kg");
-        System.out.println("Milk Yield: " + milkYield + " lt");
-        System.out.println("Health: " + healthStatus);
-        
+    public static void addCow(COW cow){
+        COWList.add(cow);
     }
+
+    public static void removeCow(int cowID){
+        COWList.removeIf(cid -> cid.cowID == cowID);
+    }
+    public static COW getcow(int cowID){
+        for (COW cid : COWList){
+            if(cid.cowID == cowID) return cid;
+
+        }
+        return null;
+
+    }
+
+    public static void listCows(){
+        for (COW cid : COWList){
+        System.out.println("Cow ID: " + cid.cowID);
+        System.out.println("Name: " + cid.cowName);
+        System.out.println("Age: " + cid.cowAge + " years");
+        System.out.println("Breed: " + cid.cowBreed);
+        System.out.println("Weight: " + cid.cowWeight + " kg");
+        System.out.println("Milk Yield: " + cid.milkYield + " lt");
+        System.out.println("Health: " + cid.healthStatus);
+        
+
+        }
+    }
+
+
      public static void main(String[] args){
 
     }
