@@ -1,0 +1,97 @@
+public class Breeding {
+    private int cowId;
+    private String cowName;
+    private int breedingId;
+    private int inseminatorId;
+    private String inseminatorName;
+    private String pregnancyStart;
+    private int gestationDays;
+    private String calvingDate;
+
+    int normalDays = 283;
+    int daysLeft;
+
+    public Breeding(int cowId, String cowName, int breedingId, int inseminatorId, String inseminatorName, String pregnancyStart, int gestationDays, String calvingDate) {
+        this.cowId = cowId;
+        this.cowName = cowName;
+        this.breedingId = breedingId;
+        this.inseminatorId = inseminatorId;
+        this.inseminatorName = inseminatorName;
+        this.pregnancyStart = pregnancyStart;
+        this.gestationDays = gestationDays;
+        this.calvingDate = calvingDate;
+    }
+    //get methods
+    public int getCowId() {
+        return cowId;
+    }
+    public String getCowName() {
+        return cowName;
+    }
+    public  int getBreedingId() {
+        return breedingId;
+    }
+    public int getInseminatorId() {
+        return inseminatorId;
+    }
+    public String getInseminatorName() {
+        return inseminatorName;
+    }
+    public String getPregnancyStart() {
+        return pregnancyStart;
+    }
+    public int getGestationDays() {
+        return gestationDays;
+    }
+    public String getCalvingDate() {
+        return calvingDate;
+    }
+
+    //set methods
+    public void setCowId(int cowId) {
+        this.cowId = cowId;
+    }
+    public void setCowName(String cowName) {
+        this.cowName = cowName;
+    }
+    public void setBreedingId(int breedingId) {
+        this.breedingId = breedingId;
+    }
+    public void setInseminatorId(int inseminatorId) {
+        this.inseminatorId = inseminatorId;
+    }
+    public void setInseminatorName(String inseminatorName) {
+        this.inseminatorName = inseminatorName;
+    }
+    public void setPregnancyStart(String pregnancyStart) {
+        this.pregnancyStart = pregnancyStart;
+    }
+    public void setGestationDays(int gestationDays) {
+        this.gestationDays = gestationDays;
+    }
+    public void setCalvingDate(String calvingDate) {
+        this.calvingDate = calvingDate;
+    }
+
+    public void checkGestationDays() {
+        if (gestationDays < normalDays) {
+          daysLeft = normalDays - gestationDays;
+          System.out.println(daysLeft + "days left until birth");
+        } else if (gestationDays == normalDays) {
+            System.out.println("Due soon");
+        } else {
+            System.out.println("Birth overdue");
+        }
+    }
+
+    public void showDetails() {
+        System.out.println("Cow Name: " + cowName);
+        System.out.println("Cow ID Number: " + cowId);
+        System.out.println("Inseminator Cow Name: " + inseminatorName);
+        System.out.println("Inseminator Cow ID" + inseminatorId);
+        System.out.println("The cow's pregnancy started on: " + pregnancyStart);
+        System.out.println("Gestation Day: " + gestationDays);
+        System.out.println("Calving Date: " + calvingDate);
+        System.out.println("Breeding ID: " + breedingId);
+    }
+}
