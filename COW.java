@@ -22,16 +22,15 @@ public class COW {
     
 
     public int getCowID() { return cowID; }
-    public void setCowID(int cowID) { this.cowID = cowID; }
+   
 
     public String getCowName() { return cowName; }
-    public void setCowName(String cowName) { this.cowName = cowName; }
-
+    
     public int getCowAge() { return cowAge; }
     public void setCowAge(int cowAge) { this.cowAge = cowAge; }
 
     public String getCowBreed() { return cowBreed; }
-    public void setCowBreed(String cowBreed) { this.cowBreed = cowBreed; }
+    
 
     public double getCowWeight() { return cowWeight; }
     public void setCowWeight(double cowWeight) { this.cowWeight = cowWeight; }
@@ -43,7 +42,7 @@ public class COW {
     public void setMilkYield(double milkYield) { this.milkYield = milkYield; }
 
     public int getBreedingID() { return breedingID; }
-    public void setBreedingID(int breedingID) { this.breedingID = breedingID; }
+   
    
     public boolean isHealthy() {
         return "Healthy".equalsIgnoreCase(healthStatus);
@@ -86,4 +85,3 @@ public class COW {
 
     }
 }
-
