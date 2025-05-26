@@ -94,4 +94,28 @@ public class Breeding {
         System.out.println("Calving Date: " + calvingDate);
         System.out.println("Breeding ID: " + breedingId);
     }
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the cow's name: ");
+        String cowName = scanner.nextLine();
+
+        System.out.println("Enter the cow's ID number: ");
+        int cowId = scanner.nextByte();
+
+        System.out.println("Enter the inseminator cow's name: ");
+        String inseminatorName = scanner.nextLine();
+
+        System.out.println("Enter the inseminator cow's ID: ");
+        int inseminatorId = scanner.nextByte();
+
+        System.out.println("The cow's pregnancy started on: ");
+        String pregnancyStart = scanner.nextLine();
+
+        System.out.println("Gestation day: ");
+        int gestationDays = scanner.nextByte();
+
+        System.out.println("The calving date is expected to be: ");
+        String calvingDate = scanner.nextLine();
+    }
 }
