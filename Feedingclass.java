@@ -1,4 +1,4 @@
-public class Main {
+public class feedingClass {
     public static void main(String[] args) {
         // Create a FeedingStock object
         FeedingStock stock1 = new FeedingStock(101, "Hay", 250.5, "Green Pastures Ltd");
