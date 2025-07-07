@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Breeding {
     private int breedingId;
     private Cow cow;
@@ -8,10 +6,12 @@ public class Breeding {
     private String pregnancyStart;
     private int gestationDays;
     private String calvingDate;
-
     private final int NORMAL_DAYS = 283;
 
-    public Breeding(int breedingId, Cow cow, int inseminatorId, String inseminatorName, String pregnancyStart, int gestationDays, String calvingDate) {
+    private AlertService alertService;
+
+    public Breeding(int breedingId, Cow cow, int inseminatorId, String inseminatorName,
+                    String pregnancyStart, int gestationDays, String calvingDate, AlertService alertService) {
         this.breedingId = breedingId;
         this.cow = cow;
         this.inseminatorId = inseminatorId;
@@ -19,16 +19,17 @@ public class Breeding {
         this.pregnancyStart = pregnancyStart;
         this.gestationDays = gestationDays;
         this.calvingDate = calvingDate;
+        this.alertService = alertService;
     }
 
     public void checkGestationDays() {
         if (gestationDays < NORMAL_DAYS) {
             int daysLeft = NORMAL_DAYS - gestationDays;
-            System.out.println(daysLeft + " days left until birth");
+            alertService.sendAlert(daysLeft + " days left until birth for " + cow.getName());
         } else if (gestationDays == NORMAL_DAYS) {
-            System.out.println("Due soon");
+            alertService.sendAlert("Cow " + cow.getName() + " is due to give birth today!");
         } else {
-            System.out.println("Birth overdue");
+            alertService.sendAlert("Birth overdue for cow " + cow.getName());
         }
     }
 
