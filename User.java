@@ -27,8 +27,7 @@ public class User implements Authenticatable {
         System.out.println("Email: " + email);
     }
 
-    // Getters (optional)
-    public String getEmail() { return email; }
-    public String getUserId() { return userId; }
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 }
