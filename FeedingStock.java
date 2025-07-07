@@ -11,36 +11,10 @@ public class FeedingStock implements Trackable {
         this.supplier = supplier;
     }
 
-    public int getStockID() {
-        return stockID;
-    }
-
-    public String getFeedType() {
-        return feedType;
-    }
-
-    public double getQuantityInStock() {
-        return quantityInStock;
-    }
-
-    public String getSupplier() {
-        return supplier;
-    }
-
-    public void setQuantityInStock(double quantityInStock) {
-        if (quantityInStock >= 0) {
-            this.quantityInStock = quantityInStock;
-        } else {
-            System.out.println("Quantity cannot be negative.");
+    public void checkStock(AlertService alertService) {
+        if (quantityInStock < 100) {
+            alertService.sendAlert("Feed stock is low for " + feedType + " (Only " + quantityInStock + "kg left)");
         }
-    }
-
-    public void setFeedType(String feedType) {
-        this.feedType = feedType;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
     }
 
     @Override
