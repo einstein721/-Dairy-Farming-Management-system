@@ -1,33 +1,6 @@
 public class User implements Authenticatable {
-    private String userId;
-    private String name;
-    private String email;
-    private String password;
+    private String email, password;
 
-    public User(String userId, String name, String email, String password) {
-        this.userId = userId;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-
-    @Override
-    public boolean login(String email, String password) {
-        return this.email.equals(email) && this.password.equals(password);
-    }
-
-    @Override
-    public void logout() {
-        System.out.println("User logged out.");
-    }
-
-    public void displayInfo() {
-        System.out.println("User ID: " + userId);
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
-    }
-
-    public String getName() {
-        return name;
-    }
+    public boolean login(...) { ... }
+    public void logout() { ... }
 }
